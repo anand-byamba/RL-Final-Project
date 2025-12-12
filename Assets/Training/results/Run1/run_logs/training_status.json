@@ -1,0 +1,29 @@
+{
+    "DodgeTheBird": {
+        "checkpoints": [
+            {
+                "steps": 27737,
+                "file_path": "results\\Run1\\DodgeTheBird\\DodgeTheBird-27737.onnx",
+                "reward": 4.242999881505966,
+                "creation_time": 1763762388.843265,
+                "auxillary_file_paths": [
+                    "results\\Run1\\DodgeTheBird\\DodgeTheBird-27737.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 27737,
+            "file_path": "results\\Run1\\DodgeTheBird.onnx",
+            "reward": 4.242999881505966,
+            "creation_time": 1763762388.843265,
+            "auxillary_file_paths": [
+                "results\\Run1\\DodgeTheBird\\DodgeTheBird-27737.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.28.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

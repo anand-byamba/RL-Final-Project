@@ -1,0 +1,22 @@
+behaviors:
+  DodgeTheBird:
+    trainer_type: ppo
+    time_horizon: 128 # Increased significantly for better long-term planning
+    max_steps: 5.0e6 # set to the recommended limit
+    hyperparameters:
+      learning_rate: 5.0e-5 # Decreased for precision and stability
+      batch_size: 4096 # Increased for more accurate gradient estimation
+      buffer_size: 40960 # Large buffer to support the large batch size
+      num_epoch: 3 # Kept low to prevent overfitting on large batches
+    network_settings:
+      normalize: true
+      num_layers: 3 # Kept at max typical range for complex feature extraction
+      hidden_units: 512 # Increased to max typical range
+    reward_signals:
+      extrinsic:
+        gamma: 0.95 # Increased to value future rewards more (survival focus)
+        strength: 1.0
+    summary_freq: 50000
+    threaded: true
+torch_settings:
+  device: cpu

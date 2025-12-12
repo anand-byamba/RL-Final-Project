@@ -1,0 +1,22 @@
+behaviors:
+  DodgeTheBird:
+    trainer_type: ppo
+    time_horizon: 64 # Increased to capture slightly longer sequences
+    max_steps: 5.0e6 # set to the recommended limit
+    hyperparameters:
+      learning_rate: 3.0e-4 # Increased for faster initial learning
+      batch_size: 1024 # Reduced for more frequent updates
+      buffer_size: 10240 # Reduced to match the smaller batch size workflow
+      num_epoch: 5 # Increased to squeeze more learning out of each batch
+    network_settings:
+      normalize: true
+      num_layers: 2 # Reduced for faster processing/inference
+      hidden_units: 128 # Reduced for a lightweight model
+    reward_signals:
+      extrinsic:
+        gamma: 0.90
+        strength: 1.0
+    summary_freq: 50000
+    threaded: true
+torch_settings:
+  device: cpu
